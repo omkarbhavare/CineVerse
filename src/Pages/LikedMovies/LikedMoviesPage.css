@@ -1,0 +1,70 @@
+.liked-movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.liked-movie {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 5px;
+  margin: 5px;
+  background-color: #282c34;
+  border-radius: 10px;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.liked-movie:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.liked-movie-poster {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.liked-movie-details {
+  padding: 10px;
+  text-align: center;
+}
+
+.liked-movie-details h3 {
+  font-size: 17px;
+  color: white;
+  margin: 10px 0;
+}
+
+.liked-movie-details p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 2px 0;
+}
+
+.liked-movie-details p:last-child {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 550px) {
+  .liked-movie {
+    width: 46%;
+  }
+}
+
+@media (max-width: 768px) {
+  .liked-movie {
+    width: 150px;
+  }
+}

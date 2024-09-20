@@ -130,7 +130,9 @@ export default function TransitionsModal({ children, media_type, id }) {
 
                   <span className="ContentModal__description">
                     {content.overview}
-                  </span><StarRating/>
+                  </span>
+                  <StarRating storageKey={`rating_${id}`} />
+
                   <div>
                     <Carousel id={id} media_type={media_type} />
                   </div>

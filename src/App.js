@@ -7,6 +7,7 @@ import Series from "./Pages/Series/Series";
 import Trending from "./Pages/Trending/Trending";
 import Search from "./Pages/Search/Search";
 import { Container } from "@material-ui/core";
+import LikedMoviesPage from "./Pages/LikedMovies/LikedMoviesPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/movies" component={Movies} />
             <Route path="/series" component={Series} />
             <Route path="/search" component={Search} />
+            <Route path="/favorites" component={LikedMoviesPage} />
           </Switch>
         </Container>
       </div>

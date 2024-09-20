@@ -14,8 +14,8 @@ const SingleContent = ({
   vote_average,
 }) => {
   return (
-    <ContentModal media_type={media_type} id={id}>
-      <Heart id={id}/>
+    <ContentModal media_type={media_type} id={id} >
+      <Heart id={id} media_type={media_type} poster={poster} title={title} date={date} vote_average={vote_average} />
       <Badge
         badgeContent={vote_average}
         color={vote_average > 6 ? "primary" : "secondary"}
