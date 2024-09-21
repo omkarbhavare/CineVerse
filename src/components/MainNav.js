@@ -8,6 +8,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { useHistory } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles({
   root: {
@@ -37,7 +38,7 @@ export default function SimpleBottomNavigation() {
       history.push("/search");
     }
   }, [value, history]);
-
+  const { t } = useTranslation();
   return (
     <BottomNavigation
       value={value}
@@ -49,27 +50,27 @@ export default function SimpleBottomNavigation() {
     >
       <BottomNavigationAction
         style={{ color: "white" }}
-        label="Trending"
+        label={t("Trending")}
         icon={<WhatshotIcon />}
       />
       <BottomNavigationAction
         style={{ color: "white" }}
-        label="Movies"
+        label={t("Movies")}
         icon={<MovieIcon />}
       />
       <BottomNavigationAction
         style={{ color: "white" }}
-        label="TV Series"
+        label={t("TV Series")}
         icon={<TvIcon />}
       />
       <BottomNavigationAction
         style={{ color: "white" }}
-        label="Like"
+        label={t("Like")}
         icon={<FavoriteIcon />}
       />
       <BottomNavigationAction
         style={{ color: "white" }}
-        label="Search"
+        label={t("Search")}
         icon={<SearchIcon />}
       />
     </BottomNavigation>

@@ -2,8 +2,8 @@ import { Badge } from "@material-ui/core";
 import { img_300, unavailable } from "../../config/config";
 import "./SingleContent.css";
 import ContentModal from "../ContentModal/ContentModal";
-// import StarRating from "../StarRating";
-import Heart from "../Heart"
+import Heart from "../Heart";
+import { useTranslation } from 'react-i18next';
 
 const SingleContent = ({
   id,
@@ -13,8 +13,10 @@ const SingleContent = ({
   media_type,
   vote_average,
 }) => {
+  const { t } = useTranslation();
+
   return (
-    <ContentModal media_type={media_type} id={id} >
+    <ContentModal media_type={media_type} id={id}>
       <Heart id={id} media_type={media_type} poster={poster} title={title} date={date} vote_average={vote_average} />
       <Badge
         badgeContent={vote_average}
@@ -27,10 +29,9 @@ const SingleContent = ({
       />
       <b className="title">{title}</b>
       <span className="subTitle">
-        {media_type === "tv" ? "TV Series" : "Movie"}
+        {media_type === "tv" ? t('tv_series') : t('movie')}
         <span className="subTitle">{date}</span>
       </span>
-      {/* <StarRating /> */}
     </ContentModal>
   );
 };

@@ -8,9 +8,13 @@ import Trending from "./Pages/Trending/Trending";
 import Search from "./Pages/Search/Search";
 import { Container } from "@material-ui/core";
 import LikedMoviesPage from "./Pages/LikedMovies/LikedMoviesPage";
+import { useTranslation, Trans } from 'react-i18next';
+
 
 function App() {
+  const { t } = useTranslation();
   return (
+    <Trans i18nKey="description.part1">
     <BrowserRouter>
       <Header />
       <div className="app">
@@ -26,6 +30,7 @@ function App() {
       </div>
       <SimpleBottomNavigation />
     </BrowserRouter>
+    </Trans>
   );
 }
 
