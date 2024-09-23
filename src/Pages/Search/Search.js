@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 import SingleContent from "../../components/SingleContent/SingleContent";
+import { useTranslation } from 'react-i18next';
+
 
 const Search = () => {
   const [type, setType] = useState(0);
@@ -51,7 +53,7 @@ const Search = () => {
     fetchSearch();
     // eslint-disable-next-line
   }, [type, page]);
-
+  const { t } = useTranslation();
   return (
     <div>
       <ThemeProvider theme={darkTheme}>
@@ -59,7 +61,7 @@ const Search = () => {
           <TextField
             style={{ flex: 1 }}
             className="searchBox"
-            label="Search"
+            label={t("Search")}
             variant="filled"
             onChange={(e) => setSearchText(e.target.value)}
           />
@@ -82,8 +84,8 @@ const Search = () => {
           style={{ paddingBottom: 5 }}
           aria-label="disabled tabs example"
         >
-          <Tab style={{ width: "50%" }} label="Search Movies" />
-          <Tab style={{ width: "50%" }} label="Search TV Series" />
+          <Tab style={{ width: "50%" }} label={t("SEARCH MOVIES")}  />
+          <Tab style={{ width: "50%" }} label={t("SEARCH TV SERIES")}/>
         </Tabs>
       </ThemeProvider>
       <div className="trending">

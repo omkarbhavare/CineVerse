@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import "./Header.css";
 import LanguageIcon from '@material-ui/icons/Language';
+import {Link} from "react-router-dom"
 
 
 const Header = () => {
@@ -27,7 +28,8 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-container" onClick={() => window.scroll(0, 0)}>
-        <span className="header-title">{t('header')}</span>
+        <Link to="/"><span className="header-title">{t('header')}</span></Link>
+        
         <div className="language-container">
           <LanguageIcon className="language-icon" onClick={() => setDropdownOpen(!dropdownOpen)} />
           {dropdownOpen && (

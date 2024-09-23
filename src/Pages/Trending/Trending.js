@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 
+import { useTranslation } from "react-i18next";
+
 const Trending = () => {
 
  
@@ -24,10 +26,10 @@ const Trending = () => {
     fetchTrending();
     // eslint-disable-next-line
   }, [page]);
-
+  const { t } = useTranslation();
   return (
     <div>
-      <span className="pageTitle">Trending Today</span>
+      <span className="pageTitle">{t("Trending")} {t("Today")}</span>
       <div className="trending">
         {content &&
           content.map((c) => (

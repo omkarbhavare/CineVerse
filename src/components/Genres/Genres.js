@@ -1,6 +1,7 @@
 import { Chip } from "@material-ui/core";
 import axios from "axios";
 import { useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 const Genres = ({
   selectedGenres,
@@ -39,13 +40,13 @@ const Genres = ({
     };
     // eslint-disable-next-line
   }, []);
-
+  const { t } = useTranslation();
   return (
     <div style={{ padding: "6px 0" }}>
       {selectedGenres.map((genre) => (
         <Chip
           style={{ margin: 2 }}
-          label={genre.name}
+          label={t(genre.name)}
           key={genre.id}
           color="primary"
           clickable
@@ -56,7 +57,7 @@ const Genres = ({
       {genres.map((genre) => (
         <Chip
           style={{ margin: 2 }}
-          label={genre.name}
+          label={t(genre.name)}
           key={genre.id}
           clickable
           size="small"

@@ -4,6 +4,7 @@ import Genres from "../../components/Genres/Genres";
 import SingleContent from "../../components/SingleContent/SingleContent";
 import useGenre from "../../hooks/useGenre";
 import CustomPagination from "../../components/Pagination/CustomPagination";
+import { useTranslation } from 'react-i18next';
 
 const Movies = () => {
   const [genres, setGenres] = useState([]);
@@ -27,10 +28,11 @@ const Movies = () => {
     fetchMovies();
     // eslint-disable-next-line
   }, [genreforURL, page]);
+  const { t } = useTranslation();
 
   return (
     <div>
-      <span className="pageTitle">Discover Movies</span>
+      <span className="pageTitle">{t("Discover")} {t("Movies")}</span>
       <Genres
         type="movie"
         selectedGenres={selectedGenres}

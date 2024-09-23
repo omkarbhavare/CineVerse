@@ -2,14 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./LikedMoviesPage.css";
 import { img_300, unavailable } from "../../config/config";
+import { useTranslation } from 'react-i18next';
 
 const LikedMoviesPage = () => {
   // Retrieve liked movies from localStorage or set an empty array
   const likedMovies = JSON.parse(localStorage.getItem("likedMovies")) || [];
-
+  const { t } = useTranslation();
   return (
     <div>
-      <h2>Liked Movies</h2>
+      <h2>{t("Favourite")} {t("Movies")}</h2>
       <div className="liked-movies">
         {likedMovies.length > 0 ? (
           likedMovies.map((movie) => (

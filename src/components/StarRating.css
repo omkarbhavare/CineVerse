@@ -6,15 +6,15 @@
 
 .star {
   font-size: 24px;
-  color: lightgray; /* Color for unfilled stars */
+  color: lightgray; 
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .star.filled {
-  color: gold; /* Color for filled stars */
+  color: gold;
 }
 
 .star:hover {
-  color: gold; /* Change color on hover */
+  color: gold; 
 }
